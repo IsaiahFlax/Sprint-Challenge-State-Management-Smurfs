@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { connect } from 'react-redux'
 import { fetchData } from '../actions'
+import Form from './Form'
 
 const App = props => {
   useEffect(() => {
     props.fetchData()
   }, [])
+
     return (
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>
@@ -15,6 +17,9 @@ const App = props => {
         <div>Have fun!</div>
         <div>
           <h2>Add A Smurf</h2>
+          <div>
+            <Form />
+          </div>
           <h2>Smurfs List</h2>
           <div>
               {props.isLoading ? (
@@ -22,11 +27,12 @@ const App = props => {
               ) : (
                 <div>
             <table className="center">
-            <thead>
+            <thead />
               <th>Smurf Name</th>
               <th>Smurf Age</th>
               <th>Smurf Height</th>
-            </thead>
+              <th>Smurf ID</th>
+
             <tbody>
               {props.smurfs.map(dd => {
                 return (
@@ -34,6 +40,7 @@ const App = props => {
                     <td>{dd.name}</td>
                     <td>{dd.age}</td>
                     <td>{dd.height}</td>
+                    <td>{dd.id}</td>
                   </tr>
                 );
               })}
@@ -58,5 +65,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { fetchData  }
+  { fetchData }
 )(App);

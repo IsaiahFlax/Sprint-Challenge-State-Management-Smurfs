@@ -1,7 +1,28 @@
 .App {
   text-align: center;
+  width: 70%;
+  margin-left: auto; 
+  margin-right: auto;
 }
 table.center {
   margin-left:auto; 
   margin-right:auto;
+
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+input.input {
+    width: 100%;
+    margin-left: 40px
+}
+.btn{
+  justify-content: center;
+  width: auto
 }

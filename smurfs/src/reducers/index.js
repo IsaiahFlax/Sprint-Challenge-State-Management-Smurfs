@@ -1,5 +1,5 @@
 
-import { FETCH_DATA, DATA_SUCCESS, DATA_ERROR } from "../actions";
+import { FETCH_DATA, DATA_SUCCESS, DATA_ERROR, } from "../actions";
 
 const initialState = {
   smurfs: [],

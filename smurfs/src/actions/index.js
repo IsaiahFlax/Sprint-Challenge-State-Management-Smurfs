@@ -14,4 +14,14 @@ export const fetchData = () => {
   }
 };
 
+export const postData = () => {
+  const post = axios.post('http://localhost:3333/smurfs')
+  return dispatch => {
+    dispatch({ type: FETCH_DATA})
+    post.then(res => {
+      dispatch({ type: DATA_SUCCESS, payload: res.data})
+    }).catch(err => dispatch({ type: DATA_ERROR, payload: err}))
+  }
+}
+
 
